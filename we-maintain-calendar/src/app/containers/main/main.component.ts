@@ -7,12 +7,14 @@ import {
   selectCurrentDate,
   selectAllUsers,
   selectCurrentUserId,
-  selectViewSize
+  selectViewSize,
+  selectEventsToDisplay
 } from 'src/app/store/selectors/selectors';
 import { ChangeDateAction } from 'src/app/store/actions/current-date.action';
 import { User, ViewSize } from 'src/app/models';
 import { ChangeUserAction } from 'src/app/store/actions/current-user.action';
 import { ChangeViewSizeAction } from 'src/app/store/actions/view-size.action';
+import { CalendarData } from 'src/app/view-models/calendar-data';
 
 @Component({
   selector: 'app-main',
@@ -26,6 +28,8 @@ export class MainComponent implements OnInit {
   public currentViewSize$: Observable<ViewSize>;
   public allUsers$: Observable<User[]>;
 
+  public calendarData$: Observable<CalendarData>;
+
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
@@ -33,6 +37,8 @@ export class MainComponent implements OnInit {
     this.currentUserId$ = this.store.pipe(select(selectCurrentUserId));
     this.currentViewSize$ = this.store.pipe(select(selectViewSize));
     this.allUsers$ = this.store.pipe(select(selectAllUsers));
+
+    this.calendarData$ = this.store.pipe(select(selectEventsToDisplay));
   }
 
   public onDateChange(newDate: Date) {

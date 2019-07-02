@@ -1,0 +1,12 @@
+.column {
+  display: inline-block;
+  padding: 1em;
+  border: solid black 1px;
+  vertical-align: top;
+}
+
+.calendar {
+  overflow-x: scroll;
+  white-space: nowrap;
+  max-width: 80vw;
+}

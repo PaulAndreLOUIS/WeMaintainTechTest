@@ -1,7 +1,8 @@
 export interface Event {
   id: string;
-  start: Date;
-  end: Date;
+  date: Date;
+  startTime: number;
+  duration: number;
   name: string;
   description: string;
   attendees: string[];

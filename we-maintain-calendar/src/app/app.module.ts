@@ -13,9 +13,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { reducers, metaReducers } from 'src/app/store';
 import { MainComponent } from './containers/main/main.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { DisplayEventComponent } from './components/display-event/display-event.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent],
+  declarations: [AppComponent, MainComponent, CalendarComponent, DisplayEventComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

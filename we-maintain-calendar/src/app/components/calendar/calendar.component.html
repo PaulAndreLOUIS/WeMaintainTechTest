@@ -1,0 +1,8 @@
+<div class="calendar">
+  <div *ngFor="let kvp of calendarData | keyvalue" class="column">
+    <div>{{ kvp.value.displayDate }}</div>
+    <div *ngFor="let event of kvp.value.events">
+      <app-display-event [event]="event"></app-display-event>
+    </div>
+  </div>
+</div>
