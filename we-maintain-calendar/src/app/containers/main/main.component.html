@@ -1,1 +1,41 @@
-<p>main works!</p>
+<mat-form-field>
+  <input
+    matInput
+    [matDatepicker]="picker"
+    placeholder="Choose a date"
+    [ngModel]="currentDate$ | async"
+    (ngModelChange)="onDateChange($event)"
+  />
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Choose a User</mat-label>
+  <mat-select
+    [ngModel]="currentUserId$ | async"
+    (ngModelChange)="onUserChange($event)"
+  >
+    <mat-option *ngFor="let user of allUsers$ | async" [value]="user.id">
+      {{ user.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Choose a View Size</mat-label>
+  <mat-select
+    [ngModel]="currentViewSize$ | async"
+    (ngModelChange)="onViewSizeChange($event)"
+  >
+    <mat-option [value]="'Day'">
+      Day
+    </mat-option>
+    <mat-option [value]="'Week'">
+      Week
+    </mat-option>
+    <mat-option [value]="'Month'">
+      Month
+    </mat-option>
+  </mat-select>
+</mat-form-field>

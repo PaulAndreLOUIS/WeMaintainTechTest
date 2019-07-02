@@ -1,5 +1,5 @@
 export enum ViewSize {
-  Day,
-  Week,
-  Month
+  Day = 'Day',
+  Week = 'Week',
+  Month = 'Month'
 }
