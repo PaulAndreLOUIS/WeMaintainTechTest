@@ -7,7 +7,29 @@ import {
 } from '../actions/all-events.action';
 import { Event } from 'src/app/models';
 
-const events = {};
+const eightOClock = new Date();
+eightOClock.setHours(8, 0, 0, 0);
+const onePM = new Date();
+onePM.setHours(13, 0, 0, 0);
+
+const events = {
+  oflayuiserg: {
+    id: 'oflayuiserg',
+    start: eightOClock,
+    end: onePM,
+    name: 'Chase Rantanplan',
+    attendees: ['Joe', 'William', 'Jack'],
+    description: 'After the dog !'
+  },
+  kljzbhsxdg: {
+    id: 'kljzbhsxdg',
+    start: eightOClock,
+    end: onePM,
+    name: 'Eat !',
+    attendees: ['Averell'],
+    description: 'Averell prefers to eat...'
+  }
+};
 
 export function reducer(
   state: { [id: string]: Event | undefined } = events,
